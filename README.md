@@ -40,7 +40,7 @@ The training data and test data can be obtained from our OSF project.
 -->
 
 ## Training 
-You can find the training script in `scripts`
+You can find the training script in `script`
 
 ## Prediction
 `prediction.py` contains the script for AMP and its target groups prediction.
