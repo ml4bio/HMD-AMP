@@ -50,6 +50,11 @@ predicted_amps_ids = np.array(seq_ids)[amp_index]
 # predicted_amps_labels = seq_labels[amp_index]
 
 
+non_amp_index = np.where(binary_pred == 0)[0]
+predicted_nonamps_seqs = seqs[non_amp_index]
+predicted_nonamps_ids = np.array(seq_ids)[non_amp_index]
+
+
 # save AMP/non-AMP prediction results
 result_df = pd.DataFrame(
     {
@@ -57,6 +62,19 @@ result_df = pd.DataFrame(
         'Sequence': predicted_amps_seqs,
     }
 )
+result_AMP_df['AMP'] = 'Yes'
+
+result_nonAMP_df = pd.DataFrame(
+    {
+        'ID': predicted_nonamps_ids,
+        'Sequence': predicted_nonamps_seqs,
+    }
+)
+
+result_nonAMP_df['AMP'] = 'No'
+
+result_df = pd.concat([result_AMP_df, result_nonAMP_df], axis=0).reset_index(drop=True)
+
 
 # AMP targets prediction
 for target in ['Gram+', 'Gram-', 'Mammalian_Cell', 'Virus', 'Fungus', 'Cancer']:
@@ -77,7 +95,8 @@ for target in ['Gram+', 'Gram-', 'Mammalian_Cell', 'Virus', 'Fungus', 'Cancer']:
     
     # AMP target annotation
     target_pred = target_cls_model.predict(target_embeddings)
-    result_df[target] = target_pred
+    target_pred = pd.Series(target_pred).map({1: 'Yes', 0: 'No'})
+    result_df[target] = target_pred.reindex(result_df.index, fill_value='N/A')
     
 
 # show all target predictions
