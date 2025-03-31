@@ -13,9 +13,27 @@ First, clone the repository and create an environment with conda.<br>
 
 ```bash
 git clone https://github.com/Yu979/HMD-AMP.git
-cd ./HMD-AMP
-conda env create -f ./environment.yaml
+conda create -n HMD-AMP python=3.8 -y
+conda activate HMD-AMP
 ```
+
+Pytorch installation is different for different Operating systems. For Linux, please use the following commands.<br>
+
+```bash
+pip install torch torchvision torchaudio
+```
+
+Then, install the following packages.
+
+```bash
+pip install deep-forest
+pip install scikit-learn==1.3.0
+pip install pandas==1.2.0
+pip install biopython==1.83
+pip install fair-esm==2.0.0
+pip install numpy==1.19.5
+```
+
 <!--
 ## Data
 The training data and test data can be obtained from our OSF project.
