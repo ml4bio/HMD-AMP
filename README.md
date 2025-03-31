@@ -16,9 +16,10 @@ git clone https://github.com/Yu979/HMD-AMP.git
 cd ./HMD-AMP
 conda env create -f ./environment.yaml
 ```
-
+<!--
 ## Data
 The training data and test data can be obtained from our OSF project.
+-->
 
 ## Training 
 You can find the training script in `scripts`
