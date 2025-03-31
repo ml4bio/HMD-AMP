@@ -77,7 +77,7 @@ Model
 and you then could modify the corresponding path in `prediction.py`:
 ```python
 # specify the path of Fine-tuned model
-target_ftmodel_save_path = f'model/{target}/model_checkpoint.pth'
+target_ftmodel_save_path = f'model/{target}/ft_parts.pth'
 # specify the path of Trained classifier folder
 target_clsmodel_save_path = f'model/{target}/clsmodel'
 ```
