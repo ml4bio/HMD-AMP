@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     
     
-    parser = argparse.ArgumentParser(description='AMP/non-AMP prediction training')
+    parser = argparse.ArgumentParser(description='AMP traget prediction training')
     
     parser.add_argument(
         "--target",
