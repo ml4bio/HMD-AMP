@@ -15,6 +15,10 @@ from src.Net import *
 from src.utils import *
 
 
+def ensure_dir(path):
+    if path is not None:
+        os.makedirs(path, exist_ok=True)
+
 
 def data_process(data_path, labels_path):
     # generate dataset for training
@@ -210,6 +214,10 @@ if __name__ == '__main__':
     
     
     args = parser.parse_args()
+
+    ensure_dir(args.ftmodel_save_path)
+    ensure_dir(args.emb_path)
+    
     
     # if no available fine-tuned model
     if not os.path.exists(args.ftmodel_save_path+'/'+'model_checkpoint.pth'):
