@@ -5,7 +5,7 @@ import argparse
 from sklearn.metrics import classification_report
 import sys
 # use sys.path.append() to add src path
-sys.path.append('/data/yuqinze/project/HMD-AMP')
+sys.path.append('../')
 from src.utils import *
 
 
