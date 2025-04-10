@@ -15,7 +15,9 @@ from src.Net import *
 from src.utils import *
 
 
-
+def ensure_dir(path):
+    if path is not None:
+        os.makedirs(path, exist_ok=True)
 
 
 def split_5folds(args, fold_number):
@@ -257,7 +259,7 @@ if __name__ == '__main__':
     vec = dict(zip(order, name))
 
 
-    parser = argparse.ArgumentParser(description='AMP/non-AMP prediction feature extraction')
+    parser = argparse.ArgumentParser(description='AMP target prediction feature extraction')
     
     parser.add_argument(
         "--target",
@@ -298,6 +300,9 @@ if __name__ == '__main__':
     
     
     args = parser.parse_args()
+
+    ensure_dir(args.ftmodel_save_path)
+    ensure_dir(args.emb_path)
     
     # if no available fintuned model
     if not os.path.exists(args.ftmodel_save_path+'/'+'model_checkpoint.pth'):
