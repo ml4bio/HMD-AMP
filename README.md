@@ -12,7 +12,7 @@ This repository contains code for the paper ***HMD-AMP***.
 First, clone the repository and create an environment with conda.<br>
 
 ```bash
-git clone https://github.com/Yu979/HMD-AMP.git
+git clone https://github.com/ml4bio/HMD-AMP.git
 conda create -n HMD-AMP python=3.8 -y
 conda activate HMD-AMP
 ```
