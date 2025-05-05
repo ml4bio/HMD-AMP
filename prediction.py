@@ -56,7 +56,7 @@ predicted_nonamps_ids = np.array(seq_ids)[non_amp_index]
 
 
 # save AMP/non-AMP prediction results
-result_df = pd.DataFrame(
+result_AMP_df = pd.DataFrame(
     {
         'ID': predicted_amps_ids,
         'Sequence': predicted_amps_seqs,
