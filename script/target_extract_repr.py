@@ -84,7 +84,7 @@ def split_5folds(args, fold_number):
 
 def fine_tuning_target(args, train_data, train_label, val_data, val_label, loss_function, fold_number):
     early_stopping = EarlyStopping(patience=5)
-    esm_model, alphabet = torch.hub.load("facebookresearch/esm:main", 'esm2_t33_650M_UR50D')
+    esm_model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
     esm_model = nn.DataParallel(esm_model, device_ids=[0, 1])
     esm_model = esm_model.to(device)
     num_classes = 2
@@ -183,7 +183,7 @@ def fine_tuning_target(args, train_data, train_label, val_data, val_label, loss_
 def target_feature_extraction(args, fold_number):
     # extract representations of proteins from finetuned model
     # load ESM model
-    esm_model, alphabet = torch.hub.load("facebookresearch/esm:main", 'esm2_t33_650M_UR50D')
+    esm_model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
     print('pretrain model downloded')
     batch_converter = alphabet.get_batch_converter()
     esm_model = nn.DataParallel(esm_model, device_ids=[0])
