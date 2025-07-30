@@ -42,6 +42,8 @@ The training data can be obtained from [Zenodo](https://doi.org/10.5281/zenodo.1
 ## Training 
 You can find the training script in `script`.
 
+The training data can be obtained from [Zenodo](https://doi.org/10.5281/zenodo.15583284).
+
 ## Prediction
 `prediction.py` contains the script for AMP and its target groups prediction.
 
