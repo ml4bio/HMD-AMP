@@ -49,7 +49,7 @@ The training data can be obtained from [Zenodo](https://doi.org/10.5281/zenodo.1
 
 ### Trained models
 Besides training the model by yourself, we also provide the fine-tuned protein language model and trained classifiers for direct usage. 
-#### Weight Download: [AMP/non-AMP prediction task](https://drive.google.com/file/d/1Z4IeD0rUfBtN4OwSh7S-2fJUCbk07qiA/view?usp=sharing)
+#### Download model weights: [AMP/non-AMP prediction task](https://drive.google.com/file/d/1Z4IeD0rUfBtN4OwSh7S-2fJUCbk07qiA/view?usp=sharing)
 Fine-tuned protein language model: `ft_parts.pth`
 
 Trained classifier: `clsmodel/`
@@ -58,7 +58,7 @@ First, in `prediction.py`, assign `sequences_file_path` with your path of *FASTA
 and `clsmodel_save_path` with your path of *Trained classifier* folder.
 
 
-#### Weight Download: [AMP target groups prediction task](https://drive.google.com/file/d/199S59bh9KO9IPTmzOYOhd4t1NHN_zdcg/view?usp=sharing)
+#### Download model weights: [AMP target groups prediction task](https://drive.google.com/file/d/199S59bh9KO9IPTmzOYOhd4t1NHN_zdcg/view?usp=sharing)
 
 Fine-tuned protein language model: `ft_parts.pth`
 
